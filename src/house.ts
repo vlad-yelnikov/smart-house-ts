@@ -20,7 +20,7 @@ class House {
     }
 
     getDevice(name: string): IDevice {
-        return this.devices.find(device => device.name === name);
+        return this.devices.find(device => device.getName() === name)
     }
 
     delDevice(name: string): void {

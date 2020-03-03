@@ -1,8 +1,8 @@
 class Lamp extends Device {
     private color: string;
-    private power: PowerRegulator;
+    private power: IPowerRegulator;
 
-    constructor(name: string, color: string, power: PowerRegulator) {
+    constructor(name: string, color: string, power: IPowerRegulator) {
         super(name);
         this.color = color;
         this.power = power;
@@ -17,7 +17,7 @@ class Lamp extends Device {
     }
 
     getPower(): number {
-        return this.power.power;
+        return this.power.getPower();
     }
 
     setPower(value: number): void {

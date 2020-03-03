@@ -1,5 +1,5 @@
 class PowerRegulator implements IPowerRegulator {
-    public power: number;
+    private power: number;
 
     constructor(power: number) {
         this.power = power;

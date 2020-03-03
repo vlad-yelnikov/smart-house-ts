@@ -35,7 +35,7 @@ class Microwave extends Device {
     }
 
     getPower(): number {
-        return this.power.power;
+        return this.power.getPower();
     }
 
     setPower(value: number): void {
