@@ -1,5 +1,4 @@
 interface IDevice {
-    [x: string]: any;
     getName(): string;
 
     setName(name: string): void;

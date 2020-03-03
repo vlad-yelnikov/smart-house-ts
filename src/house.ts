@@ -23,17 +23,17 @@ class House {
         return this.devices.find(device => device.name === name);
     }
 
-    delDevice(name: string) {
+    delDevice(name: string): void {
         const device = this.getDevice(name);
         const index = this.devices.indexOf(device);
         this.devices.splice(index, 1);
     }
 
-    getAllDevices() {
+    getAllDevices(): Array<IDevice> {
         return this.devices;
     }
 
-    delayedOn(name: string, delay: number, callback: Function) {
+    delayedOn(name: string, delay: number, callback: Function): void {
         const device = this.getDevice(name);
         setTimeout(() => {
             device.on();
@@ -41,7 +41,7 @@ class House {
         }, delay);
     }
 
-    delayedOff(name: string, delay: number, callback: Function) {
+    delayedOff(name: string, delay: number, callback: Function): void {
         const device = this.getDevice(name);
         setTimeout(() => {
             device.off();

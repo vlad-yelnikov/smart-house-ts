@@ -1,5 +1,5 @@
 abstract class Device implements IDevice {
-    public name: string;
+    private name: string;
     private state: boolean;
 
     constructor(name: string) {
