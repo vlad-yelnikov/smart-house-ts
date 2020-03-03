@@ -1,52 +1,39 @@
+"use strict";
 class Microwave extends Device {
-    private time: number;
-    private mode: string;
-    private power: PowerRegulator;
-
-    constructor(name: string, power: PowerRegulator) {
+    constructor(name, power) {
         super(name);
         this.power = power;
         this.time = 0;
         this.mode = '';
     }
-
-    getTime(): number {
+    getTime() {
         return this.time;
     }
-
-    setTime(time: number) {
+    setTime(time) {
         this.time = time;
     }
-
-    getMode(): string {
+    getMode() {
         return this.mode;
     }
-
-    heat(): void {
+    heat() {
         this.mode = 'heat';
     }
-
-    defrost(): void {
+    defrost() {
         this.mode = 'defrost';
     }
-
-    grill(): void {
+    grill() {
         this.mode = 'grill';
     }
-
-    getPower(): number {
+    getPower() {
         return this.power.power;
     }
-
-    setPower(value: number): void {
+    setPower(value) {
         return this.power.setPower(value);
     }
-
-    increasePower(value: number): void {
+    increasePower(value) {
         return this.power.increasePower(value);
     }
-
-    decreasePower(value: number): void {
+    decreasePower(value) {
         return this.power.decreasePower(value);
     }
 }

@@ -1,47 +1,37 @@
+"use strict";
 class House {
-    private name: string;
-    private devices: Array<IDevice>;
-
-    constructor(name: string) {
+    constructor(name) {
         this.name = name;
         this.devices = [];
     }
-
-    getName(): string {
+    getName() {
         return this.name;
     }
-
-    setName(name: string): void {
+    setName(name) {
         this.name = name;
     }
-
-    addDevice(device: IDevice): void {
+    addDevice(device) {
         this.devices.push(device);
     }
-
-    getDevice(name: string): IDevice {
+    getDevice(name) {
         return this.devices.find(device => device.name === name);
     }
-
-    delDevice(name: string) {
+    delDevice(name) {
         const device = this.getDevice(name);
         const index = this.devices.indexOf(device);
         this.devices.splice(index, 1);
     }
-
     getAllDevices() {
         return this.devices;
     }
-
-    delayedOn(name: string, delay: number, callback: Function) {
+    delayedOn(name, delay, callback) {
         const device = this.getDevice(name);
         setTimeout(() => {
             device.on();
             callback();
         }, delay);
     }
-
-    delayedOff(name: string, delay: number, callback: Function) {
+    delayedOff(name, delay, callback) {
         const device = this.getDevice(name);
         setTimeout(() => {
             device.off();

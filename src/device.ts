@@ -1,19 +1,29 @@
-abstract class Device {
-    constructor(protected name: string) {}
-    protected state = false;
-    getName() {
+abstract class Device implements IDevice {
+    public name: string;
+    private state: boolean;
+
+    constructor(name: string) {
+        this.name = name;
+        this.state = false;
+    }
+
+    getName(): string {
         return this.name;
     }
-    setName(name: string) {
+
+    setName(name: string): void {
         this.name = name;
     }
-    getState() {
+
+    getState(): boolean {
         return this.state;
     }
-    on() {
+
+    on(): void {
         this.state = true;
     }
-    off() {
+
+    off(): void {
         this.state = false;
     }
 }

@@ -1,34 +1,26 @@
+"use strict";
 class Lamp extends Device {
-    private color: string;
-    private power: PowerRegulator;
-
-    constructor(name: string, color: string, power: PowerRegulator) {
+    constructor(name, color, power) {
         super(name);
         this.color = color;
         this.power = power;
     }
-
-    getColor(): string {
+    getColor() {
         return this.color;
     }
-
-    setColor(color: string): void {
+    setColor(color) {
         this.color = color;
     }
-
-    getPower(): number {
+    getPower() {
         return this.power.power;
     }
-
-    setPower(value: number): void {
+    setPower(value) {
         return this.power.setPower(value);
     }
-
-    increasePower(value: number): void {
+    increasePower(value) {
         return this.power.increasePower(value);
     }
-
-    decreasePower(value: number): void {
+    decreasePower(value) {
         return this.power.decreasePower(value);
     }
 }
