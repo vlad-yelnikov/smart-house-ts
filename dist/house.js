@@ -1,4 +1,3 @@
-"use strict";
 class House {
     constructor(name) {
         this.name = name;
@@ -24,10 +23,19 @@ class House {
     getAllDevices() {
         return this.devices;
     }
-    delayedSwitch(name, delay) {
+    delayedOn(name, delay) {
         return new Promise(resolve => {
             setTimeout(() => {
-                resolve(this.getDevice(name));
+                this.getDevice(name).on();
+                resolve();
+            }, delay);
+        });
+    }
+    delayedOff(name, delay) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                this.getDevice(name).off();
+                resolve();
             }, delay);
         });
     }

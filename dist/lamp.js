@@ -1,4 +1,3 @@
-"use strict";
 class Lamp extends Device {
     constructor(name, color, power) {
         super(name);

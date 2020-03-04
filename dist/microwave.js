@@ -1,4 +1,3 @@
-"use strict";
 class Microwave extends Device {
     constructor(name, power) {
         super(name);

@@ -19,13 +19,13 @@ class House {
         this.devices.push(device);
     }
 
-    public getDevice(name: string): IDevice | undefined {
-        return this.devices.find(device => device.getName() === name)
+    public getDevice(name: string): IDevice {
+        return this.devices.find(device => device.getName() === name);
     }
 
     public delDevice(name: string): void {
         const device = this.getDevice(name);
-        const index = this.devices.indexOf(device!);
+        const index = this.devices.indexOf(device);
         this.devices.splice(index, 1);
     }
 
@@ -33,10 +33,20 @@ class House {
         return this.devices;
     }
 
-    public delayedSwitch(name: string, delay: number): Promise<IDevice> {
+    public delayedOn(name: string, delay: number): Promise<void> {
         return new Promise(resolve => {
             setTimeout(() => {
-                resolve(this.getDevice(name));
+                this.getDevice(name).on();
+                resolve();
+            }, delay);
+        });
+    }
+    
+    public delayedOff(name: string, delay: number): Promise<void> {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                this.getDevice(name).off();
+                resolve();
             }, delay);
         });
     }
