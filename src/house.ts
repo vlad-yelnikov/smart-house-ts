@@ -33,19 +33,11 @@ class House {
         return this.devices;
     }
 
-    public delayedOn(name: string, delay: number, callback: Function): void {
-        const device = this.getDevice(name);
-        setTimeout(() => {
-            device!.on();
-            callback();
-        }, delay);
-    }
-
-    public delayedOff(name: string, delay: number, callback: Function): void {
-        const device = this.getDevice(name);
-        setTimeout(() => {
-            device!.off();
-            callback();
-        }, delay);
+    public delayedSwitch(name: string, delay: number): Promise<IDevice> {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(this.getDevice(name));
+            }, delay);
+        });
     }
 }

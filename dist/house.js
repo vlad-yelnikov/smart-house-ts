@@ -24,18 +24,11 @@ class House {
     getAllDevices() {
         return this.devices;
     }
-    delayedOn(name, delay, callback) {
-        const device = this.getDevice(name);
-        setTimeout(() => {
-            device.on();
-            callback();
-        }, delay);
-    }
-    delayedOff(name, delay, callback) {
-        const device = this.getDevice(name);
-        setTimeout(() => {
-            device.off();
-            callback();
-        }, delay);
+    delayedSwitch(name, delay) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(this.getDevice(name));
+            }, delay);
+        });
     }
 }
