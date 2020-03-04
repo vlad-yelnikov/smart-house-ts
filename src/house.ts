@@ -41,7 +41,7 @@ class House {
             }, delay);
         });
     }
-    
+
     public delayedOff(name: string, delay: number): Promise<void> {
         return new Promise(resolve => {
             setTimeout(() => {
