@@ -8,27 +8,27 @@ class Lamp extends Device {
         this.power = power;
     }
 
-    getColor(): string {
+    public getColor(): string {
         return this.color;
     }
 
-    setColor(color: string): void {
+    public setColor(color: string): void {
         this.color = color;
     }
 
-    getPower(): number {
+    public getPower(): number {
         return this.power.getPower();
     }
 
-    setPower(value: number): void {
+    public setPower(value: number): void {
         return this.power.setPower(value);
     }
 
-    increasePower(value: number): void {
+    public increasePower(value: number): void {
         return this.power.increasePower(value);
     }
 
-    decreasePower(value: number): void {
+    public decreasePower(value: number): void {
         return this.power.decreasePower(value);
     }
 }

@@ -25,7 +25,7 @@ class Microwave extends Device {
         this.mode = 'grill';
     }
     getPower() {
-        return this.power.power;
+        return this.power.getPower();
     }
     setPower(value) {
         return this.power.setPower(value);

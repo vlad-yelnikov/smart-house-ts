@@ -12,7 +12,7 @@ class Lamp extends Device {
         this.color = color;
     }
     getPower() {
-        return this.power.power;
+        return this.power.getPower();
     }
     setPower(value) {
         return this.power.setPower(value);

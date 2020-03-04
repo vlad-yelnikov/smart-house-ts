@@ -7,23 +7,23 @@ abstract class Device implements IDevice {
         this.state = false;
     }
 
-    getName(): string {
+    public getName(): string {
         return this.name;
     }
 
-    setName(name: string): void {
+    public setName(name: string): void {
         this.name = name;
     }
 
-    getState(): boolean {
+    public getState(): boolean {
         return this.state;
     }
 
-    on(): void {
+    public on(): void {
         this.state = true;
     }
 
-    off(): void {
+    public off(): void {
         this.state = false;
     }
 }

@@ -14,7 +14,7 @@ class House {
         this.devices.push(device);
     }
     getDevice(name) {
-        return this.devices.find(device => device.name === name);
+        return this.devices.find(device => device.getName() === name);
     }
     delDevice(name) {
         const device = this.getDevice(name);

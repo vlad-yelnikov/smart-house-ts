@@ -5,19 +5,19 @@ class PowerRegulator implements IPowerRegulator {
         this.power = power;
     }
 
-    getPower(): number {
+    public getPower(): number {
         return this.power;
     }
 
-    setPower(value: number): void {
+    public setPower(value: number): void {
         if (value >= 0 && value <= 100) this.power = value;
     }
 
-    increasePower(value: number): void {
+    public increasePower(value: number): void {
         if (this.power + value <= 100) this.power += value;
     }
 
-    decreasePower(value: number): void {
+    public decreasePower(value: number): void {
         if (this.power - value >= 0) this.power -= value;
     }
 }

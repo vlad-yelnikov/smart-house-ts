@@ -7,44 +7,44 @@ class House {
         this.devices = [];
     }
 
-    getName(): string {
+    public getName(): string {
         return this.name;
     }
 
-    setName(name: string): void {
+    public setName(name: string): void {
         this.name = name;
     }
 
-    addDevice(device: IDevice): void {
+    public addDevice(device: IDevice): void {
         this.devices.push(device);
     }
 
-    getDevice(name: string): IDevice {
+    public getDevice(name: string): IDevice | undefined {
         return this.devices.find(device => device.getName() === name)
     }
 
-    delDevice(name: string): void {
+    public delDevice(name: string): void {
         const device = this.getDevice(name);
-        const index = this.devices.indexOf(device);
+        const index = this.devices.indexOf(device!);
         this.devices.splice(index, 1);
     }
 
-    getAllDevices(): Array<IDevice> {
+    public getAllDevices(): Array<IDevice> {
         return this.devices;
     }
 
-    delayedOn(name: string, delay: number, callback: Function): void {
+    public delayedOn(name: string, delay: number, callback: Function): void {
         const device = this.getDevice(name);
         setTimeout(() => {
-            device.on();
+            device!.on();
             callback();
         }, delay);
     }
 
-    delayedOff(name: string, delay: number, callback: Function): void {
+    public delayedOff(name: string, delay: number, callback: Function): void {
         const device = this.getDevice(name);
         setTimeout(() => {
-            device.off();
+            device!.off();
             callback();
         }, delay);
     }
